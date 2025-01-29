@@ -5,7 +5,7 @@ import io
 import base64
 
 # Configura il client OpenAI
-client = OpenAI(api_key='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')  # Sostituisci con la tua API key
+client = OpenAI(api_key='sk-proj_dXEHA8KD9pYpCNM7lS0AOZEv_KcxUScrT8A')  # Sostituisci con la tua API key
 
 # Titolo dell'app
 st.title("ChatBot per la Cura dei Capelli 🧴💇‍♀")
