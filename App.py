@@ -3,9 +3,14 @@ from openai import OpenAI
 from PIL import Image
 import io
 import base64
+from dotenv import load_dotenv
+import os
 
+# Carica le variabili d'ambiente dal file .env
+load_dotenv()
+print(os.getenv('OPENAI_API_KEY'))
 # Configura il client OpenAI
-client = OpenAI(api_key='sk-proj_dXEHA8KD9pYpCNM7lS0AOZEv_KcxUScrT8A')  # Sostituisci con la tua API key
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))  # Carica la tua API key dall'ambiente
 
 # Titolo dell'app
 st.title("ChatBot per la Cura dei Capelli 🧴💇‍♀")
@@ -104,7 +109,7 @@ def suggest_products(problem_description):
             "Districare facilmente": ["Balsamo spray", "Balsamo meliloto"],
         },
         "caduta": {
-            "Capelli deboli e radi": ["Shampoo ylang ylang", "Lozione foglie d’olivo"],
+            "Capelli deboli e radi": ["Shampoo ylang ylang", "Lozione foglie d'olivo"],
             "Rinforzare dalla radice": ["Lozione stimolante"],
         },
         "inquinanti": {
